@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 200px auto;
@@ -26,16 +32,69 @@
   grid-area: footer;
 }
 
+      /* Header */
 .content-header {
-  color: #242424;
-  background-color: #d17403;
-  font-weight: 600;
-  text-align: space-between;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 10px;
-  
+  display: flex;                             /* Mengaktifkan flexbox agar elemen sejajar ke samping */
+    justify-content: space-between;          /* Menaruh logo di ujung kiri dan menu di ujung kanan */
+    align-items: center;                     /* Menjaga logo dan menu tetap rata tengah secara vertikal */
+    color: #242424;
+    background-color: #4d694e;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    color:white;
+    position: relative;                     /* Penting sebagai patokan dropdown */
 }
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: white; */
+}
+
+.Nav-menu {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+  text-decoration-style: none;
+  /* background-color: tomato; */
+}
+
+.Nav-menu a {
+  color: white;
+  text-decoration: none;
+  position: relative;                     /* Penting sebagai patokan dropdown */
+}
+
+.dropdown {
+    position: relative;                    /* Menahan posisi absolute di dalamnya */
+}
+
+/* Edit selector ini di line 72-78 kamu */
+.dropdown a {
+    display: block;
+    position: absolute;                   /* Bikin link-nya melayang */
+    background-color: #4d694e;          /* Samain dengan warna header biar nyambung */
+    min-width: 120px;
+    padding: 10px;
+    z-index: 1000;                        /* Supaya di atas elemen Main (hijau) */
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/* Atur jarak tiap link agar tidak menumpuk di satu titik */
+.dropdown a:nth-of-type(1) { top: 40px; }
+.dropdown a:nth-of-type(2) { top: 80px; }
+.dropdown a:nth-of-type(3) { top: 120px; }
+.dropdown a:nth-of-type(4) { top: 160px; }
+.dropdown a:nth-of-type(5) { top: 200px; }
+
+
+
+
+
 
 .content-leftbar {
   color: #242424;
