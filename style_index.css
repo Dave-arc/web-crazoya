@@ -4,16 +4,22 @@
   box-sizing: border-box;
 }
 
+body {
+    background-color: #fff3d5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Supaya font-nya modern */
+}
+
 .grid {
   display: grid;
-  grid-template-columns: 200px auto;
-  grid-template-rows: 50px minmax(160px, auto) auto;
+  grid-template-columns: 1fr 1fr; /* Pakai 1fr 1fr biar bagi dua sama rata (50:50) */
+  grid-template-rows: 80px 1fr auto; 
   grid-template-areas: 
     'header header'
     'leftbar main'
     'footer footer';
-  column-gap: 21px;
-  row-gap: 8px;
+  column-gap: 0; /* Hapus celah samping */
+  row-gap: 0;    /* Hapus celah atas bawah */
+  min-height: 100vh;
 }
 
 .page-header {
@@ -41,7 +47,7 @@
     background-color: #4d694e;
     font-weight: 600;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 20px 20px;                     /* Tinggi x lebar*/
     color:white;
     position: relative;                     /* Penting sebagai patokan dropdown */
 }
@@ -52,18 +58,16 @@
   /* color: white; */
 }
 
-.Nav-menu {
+.nav-menu {
   display: flex;
-  gap: 20px;
-  justify-content: end;
-  text-decoration-style: none;
-  /* background-color: tomato; */
+  gap: 30px;
 }
 
-.Nav-menu a {
+.nav-menu a, .dropdown summary {
   color: white;
   text-decoration: none;
-  position: relative;                     /* Penting sebagai patokan dropdown */
+  font-size: 20px;
+  font-family: sans-serif; /* Pakai font yang bersih tanpa kaki-kaki */
 }
 
 .dropdown {
@@ -97,23 +101,34 @@
 
 
 .content-leftbar {
-  color: #242424;
-  background-color: #0355d1;
-  font-weight: 600;
-  text-align: center;
-  box-sizing: border-box;
+  background-color: #fff3d5; /* Ganti dari biru ke krem sesuai background body */
+  color: #242424;            /* Ganti tulisan jadi gelap biar kebaca */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Biar teks di tengah secara vertikal */
+  padding: 60px;             /* Kasih ruang biar teksnya elegan di tengah */
+  text-align: left;          /* Gambar target teksnya rata kiri */
   height: 100%;
-  padding: 10px;
 }
 
+.content-leftbar h1 {
+  font-size: 48px;           /* Ukuran "Crazoya stores" digedein */
+  margin-bottom: 20px;
+}
+
+
+
 .content-main {
-  color: #242424;
-  background-color: #41d103;
-  font-weight: 600;
-  text-align: center;
-  box-sizing: border-box;
+  padding: 0;           /* Hapus ruang kosong di sekitar gambar */
   height: 100%;
-  padding: 10px;
+  overflow: hidden;
+}
+
+.content-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Ini WAJIB biar gambar gak penyet tapi tetep full */
+  display: block;
 }
 
 .content-footer {
