@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.product-image {
+    max-width: 100%;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.description {
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.price {
+    text-align: center;
+    font-size: 24px;
+    color: blue;
+    margin: 10px 0;
+}
+
+.product-image {
+  width: 100%;
+  height: 59%;
+  aspect-ratio: 1 / 1;      /* 🔥 bikin kotak */
+  object-fit: cover;        /* potong rapi */
+  border-radius: 10px;
+}
+
+
+.product-detail {
+    font-size: 30px;
+    max-width: 800px;
+    margin: auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.pesan {
+    /* position: fixed; */
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: #ff7a34;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
