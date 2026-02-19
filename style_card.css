@@ -4,118 +4,165 @@
     box-sizing: border-box;
 }
 
+/* HEADER & NAV */
 .content-header {
-  display: flex;                             /* Mengaktifkan flexbox agar elemen sejajar ke samping */
-    justify-content: space-between;          /* Menaruh logo di ujung kiri dan menu di ujung kanan */
-    align-items: center;                     /* Menjaga logo dan menu tetap rata tengah secara vertikal */
-    color: #242424;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #4d694e;
     font-weight: 600;
-    box-sizing: border-box;
-    padding: 10px 20px;
-    color:white;
-    position: relative;                     /* Penting sebagai patokan dropdown */
+    padding: 20px 20px;
+    color: white;
+    position: relative;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  /* color: white; */
+    font-size: 40px;
+    font-weight: bold;
 }
 
-.Nav-menu {
-  display: flex;
-  gap: 20px;
-  justify-content: end;
-  text-decoration-style: none;
-  /* background-color: tomato; */
+.nav-menu {
+    display: flex;
+    gap: 30px;
 }
 
-.Nav-menu a {
-  color: white;
-  text-decoration: none;
-  position: relative;                     /* Penting sebagai patokan dropdown */
+.nav-menu a,
+.dropdown summary {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
 }
 
+/* 5. DROPDOWN SYSTEM */
 .dropdown {
-    position: relative;                    /* Menahan posisi absolute di dalamnya */
+    position: relative;
 }
 
-/* Edit selector ini di line 72-78 kamu */
 .dropdown a {
     display: block;
-    position: absolute;                   /* Bikin link-nya melayang */
-    background-color: #4d694e;          /* Samain dengan warna header biar nyambung */
+    position: absolute;
+    background-color: #4d694e;
     min-width: 120px;
     padding: 10px;
-    z-index: 1000;                        /* Supaya di atas elemen Main (hijau) */
+    z-index: 1000;
     text-decoration: none;
     color: white;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-}
-
-/* Atur jarak tiap link agar tidak menumpuk di satu titik */
-.dropdown a:nth-of-type(1) { top: 40px; }
-.dropdown a:nth-of-type(2) { top: 80px; }
-.dropdown a:nth-of-type(3) { top: 120px; }
-.dropdown a:nth-of-type(4) { top: 160px; }
-.dropdown a:nth-of-type(5) { top: 200px; }
-
-
-
-.product-image {
-    max-width: 100%;
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
-h2 {
-    margin-top: 20px;
     text-align: center;
 }
 
-.description {
-    margin-top: 10px;
-    line-height: 1.6;
-    text-align: justify;
+.dropdown a:nth-of-type(1) { top: 50px; }
+.dropdown a:nth-of-type(2) { top: 100px; }
+.dropdown a:nth-of-type(3) { top: 150px; }
+.dropdown a:nth-of-type(4) { top: 200px; }
+.dropdown a:nth-of-type(5) { top: 250px; }
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown[open] a {
+    animation: dropdownFade 0.3s ease-out forwards;
+}
+
+
+
+/* Layout Utama */
+.product-detail {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fdfdfd;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    align-items: flex-start;
+}
+
+/* Bagian Kiri */
+.left-content {
+    flex: 1;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
     text-align: center;
-    font-size: 24px;
-    color: blue;
-    margin: 10px 0;
 }
 
-.product-image {
-  width: 100%;
-  height: 59%;
-  aspect-ratio: 1 / 1;      /* 🔥 bikin kotak */
-  object-fit: cover;        /* potong rapi */
-  border-radius: 10px;
+/* Bagian Kanan */
+.right-content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Sesuai referensi, konten teks rata tengah */
+    text-align: center;
 }
 
-
-.product-detail {
-    font-size: 30px;
-    max-width: 800px;
-    margin: auto;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 15px;
+.right-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #000;
 }
 
+.description-box {
+    margin: 15px 0;
+}
+
+.description-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Tombol Pesan Sesuai Gambar Referensi */
 .pesan {
-    /* position: fixed; */
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    background: #ff7a34;
+    display: inline-block;
+    background-color: #7ca67e; /* Hijau sesuai gambar */
     color: white;
+    padding: 12px 60px;
     text-decoration: none;
-    border-radius: 10px;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.pesan:hover {
+    background-color: #4d694e;
+    transform: translateY(-3px);
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .right-content {
+        margin-top: 20px;
+    }
 }
