@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-      /* Header */
+      /* Header & Navbar*/
 .content-header {
     display: flex;
     justify-content: space-between;
@@ -75,14 +75,7 @@
     animation: dropdownFade 0.3s ease-out forwards;
 }
 
-
-
-/* img {
-    width: 1px;
-    height: auto;
-    border-radius: 15px;
-} */
-
+/* CONTENT SECTIONS */
 .products {
   display: grid;
   /* Kita set jadi 4 kolom yang lebarnya sama rata (1fr) */
@@ -126,18 +119,7 @@
   margin-bottom: auto;
 }
 
-.add {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border: none;
-    background: #4D694E;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 24px;
-    color: white;
-}
+
 
 @media (max-width: 600px) {
   .container {

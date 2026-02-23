@@ -1,4 +1,5 @@
-/* 1. RESET & DASAR */
+/* 23/02/26 11.39 */
+/* RESET & DASAR */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
 
 
 /* ========================
-            Index 
+            Index
    ========================*/
 
 body {
@@ -31,7 +32,7 @@ body {
     overflow: hidden;
 }
 
-/* 2. RESPONSIVE (Mobile) */
+/*RESPONSIVE (Mobile) */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
@@ -68,13 +69,13 @@ body {
     }
 }
 
-/* 3. GRID AREA ASSIGNMENT */
+/* GRID AREA ASSIGNMENT */
 .page-header { grid-area: header; }
 .page-leftbar { grid-area: leftbar; }
 .page-main { grid-area: main; }
 .page-footer { grid-area: footer; }
 
-/* 4. HEADER & NAV */
+/* HEADER & NAV */
 .content-header {
     display: flex;
     justify-content: space-between;
@@ -104,7 +105,7 @@ body {
     font-family: sans-serif;
 }
 
-/* 5. DROPDOWN SYSTEM */
+/* DROPDOWN SYSTEM */
 .dropdown {
     position: relative;
 }
@@ -144,7 +145,7 @@ body {
     animation: dropdownFade 0.3s ease-out forwards;
 }
 
-/* 6. CONTENT SECTIONS */
+/* CONTENT SECTIONS */
 .content-leftbar {
     background-color : #fff3d5;
     color: #242424;
@@ -184,7 +185,7 @@ body {
 }
 
 /* ========================
-            Kontak 
+            Kontak
    ========================*/
 
 .page-main-contact {
@@ -204,3 +205,160 @@ img {
     height: auto;
     border-radius: 10px;
 }
+
+/* ========================
+            produk
+   ========================*/
+
+
+.products {
+  display: grid;
+  /* Kita set jadi 4 kolom yang lebarnya sama rata (1fr) */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 5px; /* Tambahin padding dikit biar nggak nempel tembok */
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  height: auto;
+  /* HAPUS width: 300px; agar dia fleksibel */
+  width: 100%;
+}
+
+.card img {
+  /* HAPUS width: 270px; ganti jadi 100% */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 4px;
+  font-size: 30px;
+  color: black;
+}
+
+.price {
+  font-size: 30px;
+  color: #555;
+  margin-bottom: auto;
+}
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ========================
+            card
+   ========================*/
+.product-detail {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fdfdfd;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    align-items: flex-start;
+}
+
+/* Bagian Kiri */
+.left-content {
+    flex: 1;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Bagian Kanan */
+.right-content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Sesuai referensi, konten teks rata tengah */
+    text-align: center;
+}
+
+.right-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.description-box {
+    margin: 15px 0;
+}
+
+.description-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-top: 10px;
+}
+
+/* Tombol Pesan Sesuai Gambar Referensi */
+.pesan {
+    display: inline-block;
+    background-color: #4d694e; /* Hijau sesuai gambar */
+    color: white;
+    padding: 12px 60px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.pesan:hover {
+    background-color: #4d694e;
+    transform: translateY(-3px);
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .right-content {
+        margin-top: 20px;
+    }
+}
+
