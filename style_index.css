@@ -263,7 +263,7 @@ img {
   color: #555;
   margin-bottom: auto;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .container {
     max-width: 100%;
     padding: 12px;
@@ -372,3 +372,9 @@ img {
     }
 }
 
+.btn-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
